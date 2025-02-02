@@ -1,0 +1,2 @@
+00418bfe - zmacknute tlacitko
+829dbcfe - nezmacknute tlacitko

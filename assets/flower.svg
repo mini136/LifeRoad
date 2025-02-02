@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <!-- Okvětní lístky -->
+    <g transform="translate(100, 100)">
+        <!-- Červený lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="red" transform="rotate(0)" />
+        <!-- Oranžový lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="orange" transform="rotate(45)" />
+        <!-- Žlutý lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="yellow" transform="rotate(90)" />
+        <!-- Zelený lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="green" transform="rotate(135)" />
+        <!-- Modrý lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="blue" transform="rotate(180)" />
+        <!-- Fialový lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="purple" transform="rotate(225)" />
+        <!-- Růžový lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="pink" transform="rotate(270)" />
+        <!-- Tyrkysový lístek -->
+        <path d="M0,-80 
+                 Q40,-40 0,0 
+                 Q-40,-40 0,-80 Z" 
+              fill="cyan" transform="rotate(315)" />
+    </g>
+
+    <!-- Střed květiny -->
+    <circle cx="100" cy="100" r="15" fill="yellow" />
+</svg>
