@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ImageBackground, CheckBox } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ImageBackground, CheckBox, Alert } from 'react-native';
 import styles from './SignUpScreenStyles'; // Aktualizovaný import
 import Icon from 'react-native-vector-icons/MaterialIcons'; // Importujeme ikonku z knihovny
 import { useNavigation } from '@react-navigation/native'; // Importujeme navigaci
+import { register } from '../api/authApi.js';
 
 export default function SignUpScreen() {
   const [passwordVisible, setPasswordVisible] = useState(false); // Stav pro zobrazení hesla
   const navigation = useNavigation(); // Inicializujeme navigaci
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleTermsPress = () => {
     // Zde můžete navigovat nebo otevřít odkaz pro Terms of Service
@@ -16,6 +20,22 @@ export default function SignUpScreen() {
   const handlePrivacyPress = () => {
     // Zde můžete navigovat nebo otevřít odkaz pro Privacy Policy
     console.log('Privacy Policy pressed');
+  };
+
+  const handleRegister = async () => {
+    try {
+      // Zavoláš register z authApi.js
+      const response = await register(email, password);
+
+      if (response) {
+        // Po úspěšné registraci přesměruješ na LoginScreen
+        Alert.alert("Úspěch", "Registrace byla úspěšná! Přihlaste se.");
+        navigation.navigate('Login');
+      }
+    } catch (error) {
+      // Pokud dojde k chybě, ukážeš chybovou hlášku
+      Alert.alert("Chyba", "Při registraci došlo k chybě. Zkuste to znovu.");
+    }
   };
 
   return (
@@ -50,7 +70,7 @@ export default function SignUpScreen() {
         <TextInput style={styles.input} placeholder="Name" />
         
         <Text style={styles.label}>Email</Text>
-        <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" />
+        <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" value={email} onChangeText={setEmail} />
         
         <Text style={styles.label}>Password</Text>
         <View style={styles.passwordContainer}>
@@ -58,6 +78,8 @@ export default function SignUpScreen() {
             style={styles.inputPass}
             placeholder="Password"
             secureTextEntry={!passwordVisible} // Nastavení podle stavu
+            value={password}
+            onChangeText={setPassword}
           />
           <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)} style={styles.eyeIcon}>
             <Icon name={passwordVisible ? 'visibility' : 'visibility-off'} size={24} color="gray" />
@@ -74,7 +96,7 @@ export default function SignUpScreen() {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.continueButton}>
+        <TouchableOpacity style={styles.continueButton} onPress={handleRegister}>
           <ImageBackground source={require('../assets/continue_button.webp')} style={styles.buttonBackground} />
         </TouchableOpacity>
 

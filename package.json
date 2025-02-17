@@ -19,6 +19,7 @@
     "@react-spring/three": "^9.7.5",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
+    "axios": "^1.7.9",
     "expo": "~52.0.18",
     "expo-font": "~13.0.1",
     "expo-linear-gradient": "~14.0.1",
