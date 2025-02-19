@@ -11,6 +11,7 @@ export default function SignUpScreen() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
 
   const handleTermsPress = () => {
     // Zde můžete navigovat nebo otevřít odkaz pro Terms of Service
@@ -25,7 +26,7 @@ export default function SignUpScreen() {
   const handleRegister = async () => {
     try {
       // Zavoláš register z authApi.js
-      const response = await register(email, password);
+      const response = await register(email, password, name);
 
       if (response) {
         // Po úspěšné registraci přesměruješ na LoginScreen
@@ -67,7 +68,7 @@ export default function SignUpScreen() {
         </View>
 
         <Text style={styles.label}>Name</Text>
-        <TextInput style={styles.input} placeholder="Name" />
+        <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName}/>
         
         <Text style={styles.label}>Email</Text>
         <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" value={email} onChangeText={setEmail} />
