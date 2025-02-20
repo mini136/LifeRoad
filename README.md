@@ -71,9 +71,6 @@ Pokud chcete přispět k vývoji aplikace, dodržujte následující kroky:
 4. Pushněte větev (`git push origin nova-funkce`)
 5. Požádejte o pull request
 
-## Licence
-Tento projekt je licencován pod **MIT licencí**. Více informací naleznete v souboru `LICENSE`.
-
 ## Kontakt
 Pokud máte jakékoli dotazy nebo návrhy na vylepšení, kontaktujte nás na **support@liferoad.com**.
 
